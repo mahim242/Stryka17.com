@@ -1,0 +1,956 @@
+/* Reset some basic styles */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Arial', sans-serif;
+}
+
+/* Dark Theme Background */
+body {
+    background-color: #121212;
+    color: #ffffff;
+}
+
+/* Header styles */
+header {
+    background-color: #1c1c1c;
+    padding: 20px 0;
+}
+
+.container {
+    width: 90%;
+    margin: 0 auto;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+/* Logo */
+.logo img {
+    width: 150px;
+}
+
+/* Navigation Menu */
+.nav-menu ul {
+    display: flex;
+    list-style: none;
+}
+
+.nav-menu ul li {
+    margin: 0 15px;
+}
+
+.nav-menu ul li a {
+    text-decoration: none;
+    color: #ffffff;
+    font-size: 16px;
+    font-weight: 500;
+}
+
+.nav-menu ul li a:hover {
+    color: #ff5722; /* Accent color on hover */
+}
+
+/* Search Bar */
+.search-bar input {
+    padding: 8px 15px;
+    border: none;
+    border-radius: 20px;
+    background-color: #333333;
+    color: #ffffff;
+    outline: none;
+    font-size: 14px;
+    width: 250px;
+    transition: width 0.3s ease;
+}
+
+.search-bar input::placeholder {
+    color: #aaaaaa;
+}
+
+.search-bar input:focus {
+    width: 300px;
+}
+
+/* User and Cart Icons */
+.user-icons a {
+    color: #ffffff;
+    margin-left: 20px;
+    font-size: 18px;
+    text-decoration: none;
+    transition: color 0.3s;
+}
+
+.user-icons a:hover {
+    color: #ff5722; /* Accent color on hover */
+}
+
+/* Responsive Design for Mobile */
+@media (max-width: 768px) {
+    .container {
+        flex-direction: column;
+    }
+
+    .nav-menu ul {
+        flex-direction: column;
+        align-items: center;
+        margin-top: 20px;
+    }
+
+    .search-bar {
+        margin-top: 15px;
+    }
+
+    .user-icons {
+        margin-top: 10px;
+    }
+}
+/* Hero Section Styles */
+.hero {
+    background-image: url('hero-background.jpg');
+    background-size: cover;
+    background-position: center;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: #ffffff;
+    text-align: center;
+    position: relative;
+}
+
+/* Dark overlay for contrast */
+.hero::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5); /* Dark overlay to enhance text visibility */
+    z-index: 1;
+}
+
+.hero-content {
+    position: relative;
+    z-index: 2;
+}
+
+/* Hero Headline */
+.hero h1 {
+    font-size: 48px;
+    font-weight: bold;
+    margin-bottom: 20px;
+    color: #ffffff;
+    text-shadow: 2px 2px 8px rgba(0, 0, 0, 0.7);
+}
+
+/* Hero Subtext */
+.hero p {
+    font-size: 20px;
+    margin-bottom: 30px;
+    color: #dddddd;
+}
+
+/* CTA Button */
+.cta-button {
+    background-color: #ff5722;
+    color: #ffffff;
+    padding: 15px 30px;
+    border: none;
+    border-radius: 30px;
+    font-size: 16px;
+    text-transform: uppercase;
+    text-decoration: none;
+    transition: background-color 0.3s ease;
+}
+
+.cta-button:hover {
+    background-color: #e64a19; /* Darker shade of accent color on hover */
+}
+
+/* Responsive Design for Mobile */
+@media (max-width: 768px) {
+    .hero h1 {
+        font-size: 32px;
+    }
+
+    .hero p {
+        font-size: 18px;
+    }
+
+    .cta-button {
+        padding: 12px 24px;
+        font-size: 14px;
+    }
+}
+/* Product Categories Section Styles */
+.categories {
+    padding: 60px 0;
+    background-color: #1c1c1c;
+    color: #ffffff;
+    text-align: center;
+}
+
+.categories h2 {
+    font-size: 36px;
+    margin-bottom: 40px;
+    color: #ffffff;
+    text-shadow: 1px 1px 6px rgba(0, 0, 0, 0.5);
+}
+
+.categories-container {
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
+    gap: 20px;
+}
+
+/* Category Card Styles */
+.category-card {
+    position: relative;
+    width: 300px;
+    overflow: hidden;
+    border-radius: 10px;
+}
+
+.category-card img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.3s ease;
+}
+
+.category-card:hover img {
+    transform: scale(1.1);
+}
+
+/* Dark Overlay on Hover */
+.category-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+    color: #ffffff;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    opacity: 0;
+    transition: opacity 0.3s ease;
+}
+
+.category-card:hover .category-overlay {
+    opacity: 1;
+}
+
+/* Category Title */
+.category-overlay h3 {
+    font-size: 28px;
+    margin-bottom: 15px;
+    text-shadow: 2px 2px 8px rgba(0, 0, 0, 0.8);
+}
+
+/* CTA Button for Category */
+.category-overlay .cta-button {
+    background-color: #ff5722;
+    color: #ffffff;
+    padding: 10px 20px;
+    border-radius: 20px;
+    text-decoration: none;
+    font-size: 16px;
+    text-transform: uppercase;
+    transition: background-color 0.3s ease;
+}
+
+.category-overlay .cta-button:hover {
+    background-color: #e64a19;
+}
+
+/* Responsive Design for Smaller Screens */
+@media (max-width: 768px) {
+    .categories-container {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .category-card {
+        width: 90%;
+        margin-bottom: 20px;
+    }
+
+    .category-overlay h3 {
+        font-size: 24px;
+    }
+}
+/* Featured Products Section Styles */
+.featured-products {
+    padding: 60px 0;
+    background-color: #1c1c1c;
+    color: #ffffff;
+    text-align: center;
+}
+
+.featured-products h2 {
+    font-size: 36px;
+    margin-bottom: 40px;
+    color: #ffffff;
+    text-shadow: 1px 1px 6px rgba(0, 0, 0, 0.5);
+}
+
+.products-container {
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
+    gap: 20px;
+}
+
+/* Product Card Styles */
+.product-card {
+    background-color: #2c2c2c;
+    border-radius: 10px;
+    overflow: hidden;
+    transition: transform 0.3s ease;
+    width: 220px; /* Set a width for uniformity */
+}
+
+.product-card img {
+    width: 100%;
+    height: 150px;
+    object-fit: cover;
+}
+
+.product-card h3 {
+    font-size: 20px;
+    margin: 15px 0;
+}
+
+.product-card .price {
+    font-size: 18px;
+    color: #ff5722; /* Accent color for price */
+    margin: 10px 0;
+}
+
+/* CTA Button */
+.cta-button {
+    background-color: #ff5722;
+    color: #ffffff;
+    padding: 10px 15px;
+    border-radius: 20px;
+    text-decoration: none;
+    font-size: 14px;
+    text-transform: uppercase;
+    transition: background-color 0.3s ease;
+    display: inline-block; /* To allow padding */
+    margin-bottom: 15px; /* Space below button */
+}
+
+.cta-button:hover {
+    background-color: #e64a19;
+}
+
+/* Hover Effect for Product Card */
+.product-card:hover {
+    transform: scale(1.05);
+}
+
+/* Responsive Design for Smaller Screens */
+@media (max-width: 768px) {
+    .products-container {
+        justify-content: center; /* Center products on smaller screens */
+    }
+
+    .product-card {
+        width: 90%; /* Full width on mobile */
+    }
+}
+/* Featured Products Section Styles */
+.featured-products {
+    padding: 60px 0;
+    background-color: #1c1c1c;
+    color: #ffffff;
+    text-align: center;
+}
+
+.featured-products h2 {
+    font-size: 36px;
+    margin-bottom: 40px;
+    color: #ffffff;
+    text-shadow: 1px 1px 6px rgba(0, 0, 0, 0.5);
+}
+
+.products-container {
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
+    gap: 20px;
+}
+
+/* Product Card Styles */
+.product-card {
+    background-color: #2c2c2c;
+    border-radius: 10px;
+    overflow: hidden;
+    transition: transform 0.3s ease;
+    width: 220px; /* Set a width for uniformity */
+}
+
+.product-card img {
+    width: 100%;
+    height: 150px;
+    object-fit: cover;
+}
+
+.product-card h3 {
+    font-size: 20px;
+    margin: 15px 0;
+}
+
+.product-card .price {
+    font-size: 18px;
+    color: #ff5722; /* Accent color for price */
+    margin: 10px 0;
+}
+
+/* CTA Button */
+.cta-button {
+    background-color: #ff5722;
+    color: #ffffff;
+    padding: 10px 15px;
+    border-radius: 20px;
+    text-decoration: none;
+    font-size: 14px;
+    text-transform: uppercase;
+    transition: background-color 0.3s ease;
+    display: inline-block; /* To allow padding */
+    margin-bottom: 15px; /* Space below button */
+}
+
+.cta-button:hover {
+    background-color: #e64a19;
+}
+
+/* Hover Effect for Product Card */
+.product-card:hover {
+    transform: scale(1.05);
+}
+
+/* Responsive Design for Smaller Screens */
+@media (max-width: 768px) {
+    .products-container {
+        justify-content: center; /* Center products on smaller screens */
+    }
+
+    .product-card {
+        width: 90%; /* Full width on mobile */
+    }
+}
+/* Featured Products Section Styles */
+.featured-products {
+    padding: 60px 0;
+    background-color: #1c1c1c;
+    color: #ffffff;
+    text-align: center;
+}
+
+.featured-products h2 {
+    font-size: 36px;
+    margin-bottom: 40px;
+    color: #ffffff;
+    text-shadow: 1px 1px 6px rgba(0, 0, 0, 0.5);
+}
+
+.products-container {
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
+    gap: 20px;
+}
+
+/* Product Card Styles */
+.product-card {
+    background-color: #2c2c2c;
+    border-radius: 10px;
+    overflow: hidden;
+    transition: transform 0.3s ease;
+    width: 220px; /* Set a width for uniformity */
+}
+
+.product-card img {
+    width: 100%;
+    height: 150px;
+    object-fit: cover;
+}
+
+.product-card h3 {
+    font-size: 20px;
+    margin: 15px 0;
+}
+
+.product-card .price {
+    font-size: 18px;
+    color: #ff5722; /* Accent color for price */
+    margin: 10px 0;
+}
+
+/* CTA Button */
+.cta-button {
+    background-color: #ff5722;
+    color: #ffffff;
+    padding: 10px 15px;
+    border-radius: 20px;
+    text-decoration: none;
+    font-size: 14px;
+    text-transform: uppercase;
+    transition: background-color 0.3s ease;
+    display: inline-block; /* To allow padding */
+    margin-bottom: 15px; /* Space below button */
+}
+
+.cta-button:hover {
+    background-color: #e64a19;
+}
+
+/* Hover Effect for Product Card */
+.product-card:hover {
+    transform: scale(1.05);
+}
+
+/* Responsive Design for Smaller Screens */
+@media (max-width: 768px) {
+    .products-container {
+        justify-content: center; /* Center products on smaller screens */
+    }
+
+    .product-card {
+        width: 90%; /* Full width on mobile */
+    }
+}
+/* Limited Time Offer Banner Styles */
+.offer-banner {
+    background-color: #121212; /* Dark background */
+    color: #ffffff;
+    text-align: center;
+    padding: 40px 0;
+    position: relative;
+    overflow: hidden;
+}
+
+/* Banner Content */
+.banner-content {
+    position: relative;
+    z-index: 1; /* Keep content above the overlay */
+}
+
+/* Banner Headline */
+.offer-banner h2 {
+    font-size: 32px;
+    margin-bottom: 10px;
+    color: #ff5722; /* Accent color for the headline */
+    text-shadow: 1px 1px 4px rgba(0, 0, 0, 0.7);
+}
+
+/* Banner Subtext */
+.offer-banner p {
+    font-size: 20px;
+    margin-bottom: 20px;
+    color: #dddddd;
+}
+
+/* CTA Button */
+.cta-button {
+    background-color: #ff5722;
+    color: #ffffff;
+    padding: 12px 25px;
+    border-radius: 30px;
+    text-decoration: none;
+    font-size: 16px;
+    text-transform: uppercase;
+    transition: background-color 0.3s ease;
+}
+
+.cta-button:hover {
+    background-color: #e64a19; /* Darker shade on hover */
+}
+
+/* Overlay (optional) */
+.offer-banner::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5); /* Dark overlay for better visibility */
+    z-index: 0; /* Place overlay behind the content */
+}
+
+/* Responsive Design for Smaller Screens */
+@media (max-width: 768px) {
+    .offer-banner h2 {
+        font-size: 28px;
+    }
+
+    .offer-banner p {
+        font-size: 18px;
+    }
+
+    .cta-button {
+        padding: 10px 20px;
+        font-size: 14px;
+    }
+}
+/* Customer Testimonials Section Styles */
+.testimonials {
+    padding: 60px 0;
+    background-color: #1c1c1c;
+    color: #ffffff;
+    text-align: center;
+}
+
+.testimonials h2 {
+    font-size: 36px;
+    margin-bottom: 40px;
+    color: #ffffff;
+    text-shadow: 1px 1px 6px rgba(0, 0, 0, 0.5);
+}
+
+.testimonials-container {
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
+    gap: 20px;
+}
+
+/* Testimonial Card Styles */
+.testimonial-card {
+    background-color: #2c2c2c;
+    border-radius: 10px;
+    padding: 20px;
+    width: 300px;
+    transition: transform 0.3s ease;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.5);
+}
+
+.testimonial-card p {
+    font-size: 18px;
+    margin-bottom: 10px;
+    color: #dddddd;
+}
+
+.testimonial-card h3 {
+    font-size: 16px;
+    color: #ff5722; /* Accent color for customer names */
+}
+
+/* Hover Effect for Testimonial Card */
+.testimonial-card:hover {
+    transform: scale(1.05);
+}
+
+/* Responsive Design for Smaller Screens */
+@media (max-width: 768px) {
+    .testimonials-container {
+        flex-direction: column;
+        align-items: center; /* Center testimonials on smaller screens */
+    }
+
+    .testimonial-card {
+        width: 90%; /* Full width on mobile */
+    }
+}
+/* Sign-Up for Newsletter Section Styles */
+.newsletter {
+    padding: 60px 0;
+    background-color: #1c1c1c;
+    color: #ffffff;
+    text-align: center;
+}
+
+.newsletter h2 {
+    font-size: 36px;
+    margin-bottom: 10px;
+    color: #ffffff;
+    text-shadow: 1px 1px 6px rgba(0, 0, 0, 0.5);
+}
+
+.newsletter p {
+    font-size: 18px;
+    margin-bottom: 30px;
+    color: #dddddd;
+}
+
+/* Newsletter Form Styles */
+.newsletter-form {
+    display: flex;
+    justify-content: center;
+    gap: 10px; /* Space between input and button */
+}
+
+.newsletter-form input[type="email"] {
+    padding: 15px;
+    width: 300px; /* Fixed width for input */
+    border: none;
+    border-radius: 5px;
+    background-color: #2c2c2c;
+    color: #ffffff;
+    font-size: 16px;
+    transition: background-color 0.3s ease;
+}
+
+.newsletter-form input[type="email"]::placeholder {
+    color: #aaaaaa; /* Light gray placeholder */
+}
+
+.newsletter-form input[type="email"]:focus {
+    background-color: #3c3c3c; /* Darker gray on focus */
+}
+
+.cta-button {
+    background-color: #ff5722;
+    color: #ffffff;
+    padding: 15px 30px;
+    border-radius: 5px;
+    border: none;
+    font-size: 16px;
+    cursor: pointer;
+    text-transform: uppercase;
+    transition: background-color 0.3s ease;
+}
+
+.cta-button:hover {
+    background-color: #e64a19; /* Darker shade on hover */
+}
+
+/* Responsive Design for Smaller Screens */
+@media (max-width: 768px) {
+    .newsletter-form {
+        flex-direction: column; /* Stack input and button on small screens */
+        align-items: center;
+    }
+
+    .newsletter-form input[type="email"] {
+        width: 90%; /* Full width on mobile */
+        margin-bottom: 10px; /* Space between input and button */
+    }
+}
+/* Footer Styles */
+.footer {
+    background-color: #121212; /* Dark background */
+    color: #ffffff; /* White text */
+    padding: 40px 20px;
+    text-align: center;
+}
+
+.footer-container {
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    margin-bottom: 20px;
+}
+
+/* Footer Links */
+.footer-links, .footer-social, .footer-contact {
+    flex: 1;
+    min-width: 200px; /* Minimum width for flexibility */
+    margin: 10px;
+}
+
+.footer-links h3, 
+.footer-social h3, 
+.footer-contact h3 {
+    font-size: 20px;
+    margin-bottom: 15px;
+    color: #ff5722; /* Accent color for headings */
+}
+
+.footer-links ul,
+.footer-social ul {
+    list-style-type: none;
+    padding: 0;
+}
+
+.footer-links li,
+.footer-social li {
+    margin: 10px 0;
+}
+
+.footer-links a,
+.footer-social a {
+    text-decoration: none;
+    color: #dddddd; /* Light gray for links */
+    transition: color 0.3s ease;
+}
+
+.footer-links a:hover,
+.footer-social a:hover {
+    color: #ff5722; /* Change color on hover */
+}
+
+/* Social Icons */
+.social-icons {
+    display: flex;
+    justify-content: space-around;
+}
+
+.social-icons img {
+    width: 30px; /* Size of social icons */
+    height: 30px;
+}
+
+/* Footer Bottom */
+.footer-bottom {
+    border-top: 1px solid #333; /* Light border on top */
+    padding-top: 20px;
+}
+
+.footer-bottom p {
+    margin: 0;
+    font-size: 14px;
+    color: #aaaaaa; /* Light gray for bottom text */
+}
+
+/* Responsive Design for Smaller Screens */
+@media (max-width: 768px) {
+    .footer-container {
+        flex-direction: column; /* Stack sections on small screens */
+        align-items: center; /* Center align */
+    }
+
+    .footer-links, .footer-social, .footer-contact {
+        text-align: center; /* Center text for smaller screens */
+    }
+}
+/* Chat Widget Styles */
+.chat-widget {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    width: 300px;
+    background-color: #1c1c1c; /* Dark background */
+    border-radius: 10px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.5);
+    overflow: hidden;
+    z-index: 1000; /* High z-index to stay on top */
+}
+
+.chat-header {
+    background-color: #ff5722; /* Header color */
+    color: #ffffff;
+    padding: 15px;
+    cursor: pointer;
+}
+
+.chat-body {
+    display: none; /* Initially hidden */
+    flex-direction: column;
+    padding: 15px;
+}
+
+.chat-body.active {
+    display: flex; /* Show when active */
+}
+
+.chat-messages {
+    flex-grow: 1; /* Take remaining space */
+    overflow-y: auto; /* Enable scrolling */
+    max-height: 200px; /* Limit height */
+    margin-bottom: 10px;
+}
+
+.chat-messages p {
+    color: #ffffff; /* White text */
+    margin: 5px 0;
+}
+
+.welcome-message {
+    font-weight: bold;
+}
+
+.chat-input {
+    padding: 10px;
+    border: none;
+    border-radius: 5px;
+    background-color: #2c2c2c; /* Darker input */
+    color: #ffffff;
+    margin-right: 10px;
+}
+
+.chat-input::placeholder {
+    color: #aaaaaa; /* Light gray placeholder */
+}
+
+.send-button {
+    background-color: #ff5722; /* Send button color */
+    color: #ffffff;
+    padding: 10px 15px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.send-button:hover {
+    background-color: #e64a19; /* Darker shade on hover */
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .chat-widget {
+        width: 100%; /* Full width on mobile */
+        right: 0; /* Align to right */
+        bottom: 0; /* Align to bottom */
+    }
+}
+/* Payment Methods Section Styles */
+.payment-methods {
+    padding: 60px 20px;
+    background-color: #1c1c1c; /* Dark background */
+    color: #ffffff; /* White text */
+    text-align: center;
+}
+
+.payment-methods h2 {
+    font-size: 36px;
+    margin-bottom: 20px;
+    color: #ff5722; /* Accent color for headings */
+    text-shadow: 1px 1px 6px rgba(0, 0, 0, 0.5);
+}
+
+.payment-icons {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 20px; /* Space between icons */
+    margin-bottom: 20px;
+}
+
+.payment-icons img {
+    width: 60px; /* Size of payment method icons */
+    filter: brightness(0) invert(1); /* White color for icons on dark background */
+    transition: transform 0.3s ease;
+}
+
+.payment-icons img:hover {
+    transform: scale(1.1); /* Hover effect to enlarge icon slightly */
+}
+
+.payment-methods p {
+    font-size: 16px;
+    color: #aaaaaa; /* Light gray text for subtext */
+    margin-top: 10px;
+}
+
+/* Responsive Design for Smaller Screens */
+@media (max-width: 768px) {
+    .payment-icons {
+        flex-wrap: wrap; /* Wrap icons on small screens */
+    }
+
+    .payment-icons img {
+        width: 50px; /* Slightly smaller icons on mobile */
+    }
+}
